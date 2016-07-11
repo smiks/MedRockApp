@@ -26,6 +26,7 @@ if(!isset($_SESSION['loggedin'])){
 Router::home('login', 'app/controllers/Login.php');
 Router::set(array(
     'login' => 'app/controllers/Login.php',
+    'postdata' => 'app/controllers/PostData.php'
     ));
 Router::route();
 
