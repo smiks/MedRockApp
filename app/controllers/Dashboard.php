@@ -3,6 +3,7 @@
 require_once 'Controller.php';
 require_once 'core/Functions.php';
 require_once 'app/models/doctor.php';
+require_once 'app/models/queue.php';
 
 class Dashboard extends Controller{
 
@@ -37,8 +38,16 @@ class Dashboard extends Controller{
 
 	public function get() {
 
+		/* get info about queue */
+		$que = new queue();
+		$queue = $que->getQueueWithDetails();
+		$patients = [];
 
-		$data = ["welcomeMessage" => "Welcome to dashboard"];
+		foreach($queue as $key => $value){
+			array_push($patients, $value);
+		}
+
+		$data = ["patients" => $patients];
 		$this->render("dashboard.view.php", $data);
 	}
 

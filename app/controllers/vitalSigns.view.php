@@ -1,6 +1,15 @@
-[include]app/views/head.view.php[/include]
+[include]app/views/header.view.php[/include]
 {{welcomeMessage}}
-<div class="form">
+<section id="content">
+
+	<div class="container">
+	     <div class="row">
+		<div class="col-md-7">
+			<!-- Heading and para -->
+			<div class="block-heading-two">
+				<h3><span>Vital Signs</span></h3>
+			</div>
+			<p>
 	<form action='/postdata/' method='post'>
 		<big><b>Body<b></big><br>
 		<input type='text' name='bodyWeight' placeholder='Weight [kg]'><br>
@@ -14,5 +23,12 @@
 		<input type='text' name='breathingRate' placeholder='Breathing rate'><br><br>
 		<input type='submit' name='submit' value='Submit Data'><br>
 	</form>
-</div>
+</p>
+		</div>
+				
+	</div> <!-- end of row div -->
+	<!-- <div class="row"></div> -->
+	</div> <!-- end of container div -->
+	
+	</section> <!-- end of content section -->
 [include]app/views/footer.view.php[/include]

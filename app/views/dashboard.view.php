@@ -1,18 +1,24 @@
 [include]app/views/head.view.php[/include]
 <div class="queueTop">
-	<div class="emergencyQueue">
-		<span>EMERGENCY QUEUE</span>
+	<div class="queue">
+		<?
+			$pid = 0;
+			foreach($patients as $key => $value){
+			?>
+
+				<div>
+					<b>Patient:</b> &nbsp;&nbsp; {{value['userName']}} {{value['userSurname']}}<br>
+					<b>Birthday:</b> &nbsp;&nbsp; {{value['userBirthDate']}}<br>
+					<a href='#'>Show more</a><br>
+					<div  id="patient{{pid}}">
+
+					</div>
+				</div>
+				<br>
+			<?
+				$pid += 1;
+			}
+		?>
 	</div>
-
-	<div class="leftQueue">
-		<span>Required visit</span>
-
-	</div>
-
-	<div class="rightQueue">
-		<span>Potential visit</span>
-
-	</div>	
-
 </div>
 [include]app/views/footer.view.php[/include]

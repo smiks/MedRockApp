@@ -56,7 +56,7 @@ class history extends Model{
 
 	}
 
-	public function getALl($whereKey, $whereValue){
+	public function getAll($whereKey, $whereValue){
 		$data = $this->orm("select")->
 						selectAll()->
 						table($this->table)->
@@ -78,6 +78,14 @@ class history extends Model{
 
 	}
 
+
+	public function lastID($userID){
+		global $db;
+		$sql = "SELECT MAX(historyID) FROM ".$this->table." WHERE userID = {$userID} LIMIT 1;";
+		$q  = $db -> query($sql);
+		$ret = $db -> fetch_single($q);
+		return $ret;
+	}
 
 	/* function updates row in database.
 	 * $data = array(fieldName => fieldValue)

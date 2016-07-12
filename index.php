@@ -28,7 +28,8 @@ Router::set(array(
     'login' => 'app/controllers/Login.php',
     'postdata' => 'app/controllers/PostData.php',
     'logindoctor' => 'app/controllers/LoginDoctor.php',
-    'dashboard' => 'app/controllers/Dashboard.php'
+    'dashboard' => 'app/controllers/Dashboard.php',
+    'logout' => 'app/controllers/Logout.php'
     ));
 Router::route();
 

@@ -62,8 +62,10 @@ class PostData extends Controller{
 		$avgWaitingTime = $info->selectAlldata("infoName", "averageWaitingTime")["infoValue"];
 
 		/* update queue */
+		$lastHistoryID = $hist->lastID($_SESSION['userID']);
 		$data = ["userID" => $_SESSION['userID'], 
 				"waitingTime" => $avgWaitingTime,
+				"historyID" => $lastHistoryID, 
 				"addedTimestamp" => time()];
 
 		$que->add($data);

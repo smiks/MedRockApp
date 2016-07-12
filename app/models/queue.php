@@ -56,13 +56,32 @@ class queue extends Model{
 
 	}
 
-	public function getAll($whereKey, $whereValue){
+	public function getAll(){
 		$data = $this->orm("select")->
 						selectAll()->
 						table($this->table)->
 						fetchArray();
 		return $data;
 
+	}
+
+	public function getQueue(){
+		$data = $this->orm("select")->
+						selectAll()->
+						table($this->table)->
+						fetchArray();
+		return $data;
+
+	}
+
+	public function getQueueWithDetails(){
+		global $db;
+		$sql = "SELECT * FROM queue q 
+				LEFT JOIN history h ON (h.historyID = q.historyID) 
+				LEFT JOIN users u ON (u.userID = q.userID)
+				ORDER BY queueID DESC;";
+		$data = $this->sqlRaw($sql)->fetchArray();
+		return $data;
 	}
 
 	public function getQueueTime(){
