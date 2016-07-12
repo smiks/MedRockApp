@@ -6,5 +6,6 @@
 	<meta name="revisit-after" content="1 day"> 
 	<meta http-equiv="Cache-control" content="max-age=86400">
     <title>Medical App</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
 </head>
 <body>
