@@ -57,7 +57,7 @@
 
 /* Domain */
 	$_http   = "http://"; // or https://
-	$_Domain = "competition.avatar-rpg.net";
+	$_Domain = "medrock.avatar-rpg.net";
 
 /* static file access */
 	$_images = "/static/images/";

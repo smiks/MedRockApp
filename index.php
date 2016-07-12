@@ -19,7 +19,7 @@ if($_PAGE_LOAD_TIME){
     $_PAGE_LOAD_START = microtime(true);
 }
 /* to be completed when needed */
-if(!isset($_SESSION['loggedin'])){
+if(!isset($_SESSION['loggedin']) && $_GET['page'] != "logindoctor"){
     $_GET['page'] = "login";
 }
 /* routing */
@@ -27,7 +27,8 @@ Router::home('login', 'app/controllers/Login.php');
 Router::set(array(
     'login' => 'app/controllers/Login.php',
     'postdata' => 'app/controllers/PostData.php',
-    'doctor' => 'app/controllers/LoginDoctor.php'
+    'logindoctor' => 'app/controllers/LoginDoctor.php',
+    'dashboard' => 'app/controllers/Dashboard.php'
     ));
 Router::route();
 
