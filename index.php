@@ -30,6 +30,7 @@ Router::set(array(
     'logindoctor' => 'app/controllers/LoginDoctor.php',
     'dashboard' => 'app/controllers/Dashboard.php',
     'logout' => 'app/controllers/Logout.php',
+    'logoutdoctor' => 'app/controllers/LogoutDoctor.php',
     'updatestatus' => 'app/controllers/UpdateStatus.php'
     ));
 Router::route();

@@ -115,6 +115,15 @@ class queue extends Model{
 	}
 
 
+	public function removeFromQueue($hid){
+		global $db;
+		$sql = "DELETE FROM ".$this->table." WHERE historyID = {$hid} LIMIT 1;";
+		$this->execute($sql);
+
+		return;
+	}
+
+
 	/* function updates row in database.
 	 * $data = array(fieldName => fieldValue)
 	 * $value = where clause value

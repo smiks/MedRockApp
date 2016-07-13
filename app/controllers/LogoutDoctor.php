@@ -3,7 +3,7 @@
 require_once 'Controller.php';
 require_once 'core/Functions.php';
 
-class Logout extends Controller{
+class LogoutDoctor extends Controller{
 
 	public function __construct(){
 		
@@ -20,7 +20,7 @@ class Logout extends Controller{
 		/* logout */
 		unset($_SESSION);
 		session_destroy();
-		Functions::redirect(Functions::internalLink("/login/"));
+		Functions::redirect(Functions::internalLink("/logindoctor/"));
 		return;		
 
 	}

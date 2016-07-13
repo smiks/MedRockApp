@@ -1,4 +1,4 @@
-	[include]app/views/header.view.php[/include]
+	[include]app/views/headerdoctor.view.php[/include]
 	<section id="content">
 
 		<div class="container">

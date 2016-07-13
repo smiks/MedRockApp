@@ -18,23 +18,27 @@ class UpdateStatus extends Controller{
 
 	public function post() {
 		$hist = new history();
-		$user = new user();
+		$que = new queue();
 
 		/* get posted input data */
 		$post = Functions::input("POST");
 
 		$notes = $post["notes"];
-		$visit = false;
+		$visit = 0;
 		$hid = $post["hid"];
 		if(isset($_POST['submitShouldVisit'])){
-			$visit = true;
+			$visit = 1;
 		}
 
+		$data = ["resolved" => 1,
+				"requiredVisit" => $visit,
+				"notes" => $notes];
 
-		$data = ["estimatedWaitingTime" => $estimatedWaitingTime, 
-				"averageWaitingTime" => $avgWaitingTime];
+		$hist->updateData("historyID", $hid, $data);
+		$que->removeFromQueue($hid);
 
-		$this->render("postData.view.php", $data);
+		
+		Functions::redirect(Functions::internalLink("/dashboard/"));
 		return;
 
 	}
