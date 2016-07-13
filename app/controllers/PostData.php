@@ -50,7 +50,7 @@ class PostData extends Controller{
 		$diz = $post["dizziness"]; /* dizziness */
 
 		$age = $user->getAge();
-		$age = calculateAge($age)
+		$age = $this->calculateAge($age);
  
 		$addedDate = Time::dateDB();
 
@@ -71,7 +71,7 @@ class PostData extends Controller{
 				"height" => $height, 
 				"cough" => $cough,
 				"vomit" => $puke,
-				"dizziness" => $dizziness,
+				"dizziness" => $diz,
 				"age" => $age,
 				"addedDate" => $addedDate];
 

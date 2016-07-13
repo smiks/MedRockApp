@@ -81,7 +81,8 @@ class user extends Model{
 
 	public function getAge($userID){
 		$data = $this->orm("select")->
-						select("age")->
+						table($this->table)->
+						select("userBirthDate")->
 						where("userID", "=", $userID)->
 						limit(1)->
 						fetchSingle();
