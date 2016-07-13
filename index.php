@@ -19,11 +19,17 @@ if($_PAGE_LOAD_TIME){
     $_PAGE_LOAD_START = microtime(true);
 }
 /* to be completed when needed */
+if(!isset($_GET['page']) && isset($_SESSION['doctorID'])){
+    $_GET['page'] = "dashboard";
+}
+if(!isset($_GET['page']) && !isset($_SESSION['doctorID'])){
+    $_GET['page'] = "home";
+}
 if(!isset($_SESSION['loggedin']) && $_GET['page'] != "logindoctor"){
     $_GET['page'] = "login";
 }
 /* routing */
-Router::home('login', 'app/controllers/Login.php');
+Router::home('home', 'app/controllers/Home.php');
 Router::set(array(
     'login' => 'app/controllers/Login.php',
     'postdata' => 'app/controllers/PostData.php',
@@ -31,7 +37,9 @@ Router::set(array(
     'dashboard' => 'app/controllers/Dashboard.php',
     'logout' => 'app/controllers/Logout.php',
     'logoutdoctor' => 'app/controllers/LogoutDoctor.php',
-    'updatestatus' => 'app/controllers/UpdateStatus.php'
+    'updatestatus' => 'app/controllers/UpdateStatus.php',
+    'home' => 'app/controllers/Home.php',
+    'patienthistory' => 'app/controllers/PatientHistory.php'
     ));
 Router::route();
 

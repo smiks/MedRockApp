@@ -11,6 +11,24 @@
 <link href="/static/css/fancybox/jquery.fancybox.css" rel="stylesheet">
 <link href="/static/css/flexslider.css" rel="stylesheet" />
 <link href="/static/css/style.css" rel="stylesheet" />
+
+<style type="text/css">
+.numberCircle {
+    border-radius: 50%;
+    behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+
+    width: 20px;
+    height: 20px;
+    padding: 1px;
+
+    background: #ffff33;
+    border: 1px solid #666;
+    color: #000;
+    text-align: center;
+
+    font: 12px Arial, sans-serif;
+}
+</style>
  
 <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>
@@ -51,8 +69,17 @@
                     <ul class="nav navbar-nav">
         			<?php
 					if($_SESSION['loggedin']){
+
+                        require_once 'app/models/history.php';
+                        $hist = new history();
+                        $nUnread = $hist->unRead($_SESSION['userID']);
+                        $showUnread = "";
+                        if($nUnread > 0){
+                            $showUnread = "<span class='numberCircle'>{$nUnread}</span>";
+                        }
 						?>
 						<!-- EXAMPLE: <li class="active"><a href="index.html">Home</a></li>  -->
+                        <li><a href="/patienthistory/">History <? echo($showUnread); ?></a></li> 
                         <li><a href="/changeDoctor/">Change doctor</a></li> 
 						<li><a href="/logout/">Logout</a></li>
 	                <?php

@@ -79,12 +79,40 @@ class history extends Model{
 	}
 
 
+	public function unRead($uid){
+		global $db;
+
+		$sql = "SELECT SUM(unread) FROM ".$this->table." WHERE userID = {$uid};";
+		$q  = $db -> query($sql);
+		$ret = $db -> fetch_single($q);
+		return $ret;
+	}
+
+	public function allRead($uid){
+		global $db;
+
+		$sql = "UPDATE ".$this->table." SET unread = 0 WHERE userID = {$uid};";
+		$db -> query($sql);
+		return;	
+	}
+
 	public function lastID($userID){
 		global $db;
 		$sql = "SELECT MAX(historyID) FROM ".$this->table." WHERE userID = {$userID} LIMIT 1;";
 		$q  = $db -> query($sql);
 		$ret = $db -> fetch_single($q);
 		return $ret;
+	}
+
+
+	public function getUserHistory($uid){
+		$data = $this->orm("select")->
+						selectAll()->
+						table($this->table)->
+						where("userID", "=", $uid)->
+						order("unread DESC, historyID desc", "")->
+						fetchArray();
+		return $data;
 	}
 
 	/* function updates row in database.

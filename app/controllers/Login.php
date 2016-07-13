@@ -29,8 +29,8 @@ class Login extends Controller{
 		$_SESSION['userID'] = $userid;
 		$_SESSION['userNumber'] = $postedID;
 		$_SESSION['loggedin'] = true;
-		$data = [];
-		$this->render("vitalSigns.view.php", $data);
+		
+		Functions::redirect(Functions::internalLink("home/"));
 		return;
 
 	}
