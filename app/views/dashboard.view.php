@@ -64,23 +64,41 @@
 						<br>
 						<a href='#click{$pid}' id='click{$pid}' onClick='moreInfo({$pid});'>Show more</a><br>
 						<div id='patient{$pid}' style='display:none;'>
-						&nbsp;&nbsp;&nbsp;&nbsp;	<b>Age:</b> &nbsp;&nbsp; {$value['age']}<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;	<b>Age:</b> &nbsp;&nbsp; {$value['age']} years<br>
 						&nbsp;&nbsp;&nbsp;&nbsp;	<b>Height:</b> &nbsp;&nbsp; {$value['height']} cm<br>
 						&nbsp;&nbsp;&nbsp;&nbsp;	<b>Weight:</b> &nbsp;&nbsp; {$value['weight']} kg<br>
 						<br>
 						<center>
-						<table>
+						<table style='width:100%;'>
 						<tr>
-						<td style='width:33%;'>
-						Saturation [SpO2]: {$value['saturation']}<br><br><br><br>
-						BloodPressure [Sys/Dia]: {$value['bloodPressureSys']}/{$value['bloodPressureDia']}<br>
+						<td style='width:35%; text-align:right; vertical-align:text-top; padding-top:7%;'>
+						Temperature: <i>{$value['temperature']} °C</i><br><br><br><br>
+						Blood Pressure<br>
+						Systolic: <i>{$value['bloodPressureSys']} mmHg</i> <br>
+						Diastolic: <i>{$value['bloodPressureDia']} mmHg</i> <br>
 						</td>
-						<td style='width:33%;'>
+						<td style='width:30%;'>
+						<center>
 						<img src='{$image}' style='max-height:250px;'>
+						</center>
 						</td>
-						<td style='width:33%;'>
-						Temperature [°C]: {$value['temperature']}<br><br><br><br>
-						Heart Beat [BPM]: {$value['heartRate']}<br>
+						<td style='width:35%; text-align:left; vertical-align:text-top; padding-top:7%;'>
+						SpO<sub style='vertical-align: sub;'>2</sub>: <i>{$value['saturation']} % </i> <br><br><br><br>
+						Heart Beat: <i>{$value['heartRate']} BPM</i> <br>
+						</td>
+						</tr>
+						<tr>
+						<td colspan='3'>
+						<br>
+						<center>
+						<form action='/updatestatus/' method='post'>
+						<input type='hidden' name='hid' value='{$value['historyID']}'>
+						<textarea name='notes' rows='3' cols='30' placeholder='Enter additional notes here...'></textarea><br>
+						<input type='submit' name='submitShouldVisit'  style='background-color:#3B3;color:#FFF;' value='SHOULD VISIT'>
+						&nbsp; &nbsp; &nbsp;
+						<input type='submit' name='submitNoNeedToVisit'  style='background-color:#D11;color:#FFF;' value='NO NEED TO VISIT'>
+						</form>
+						</center>
 						</td>
 						</tr>
 						</table>
