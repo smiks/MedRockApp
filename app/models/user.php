@@ -56,7 +56,7 @@ class user extends Model{
 
 	}
 
-	public function getALl($whereKey, $whereValue){
+	public function getAll($whereKey, $whereValue){
 		$data = $this->orm("select")->
 						selectAll()->
 						table($this->table)->
@@ -76,6 +76,16 @@ class user extends Model{
 						fetchSingle();
 		return $data;
 
+	}
+
+
+	public function getAge($userID){
+		$data = $this->orm("select")->
+						select("age")->
+						where("userID", "=", $userID)->
+						limit(1)->
+						fetchSingle();
+		return $data;
 	}
 
 

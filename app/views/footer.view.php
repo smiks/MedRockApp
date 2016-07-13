@@ -94,5 +94,6 @@
 <script src="/static/js/jquery.flexslider.js"></script>
 <script src="/static/js/animate.js"></script>
 <script src="/static/js/custom.js"></script>
+<script src="/static/js/dashboard.js"></script>
 </body>
 </html>
