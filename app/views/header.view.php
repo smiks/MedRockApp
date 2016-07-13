@@ -79,7 +79,18 @@
                         }
 						?>
 						<!-- EXAMPLE: <li class="active"><a href="index.html">Home</a></li>  -->
+
+                        <li><a href="#" style='border:0px; color:#b3b3b3;'>Logged in as: <? echo($_SESSION['userName']." ".$_SESSION['userSurname']); ?></a></li> 
+
+                        <? if($_GET['page'] == "patienthistory"){ ?>
+                            <li><a href="/home/">Ask Doctor</a></li> 
+                        <?
+                        }
+                        else {?>
                         <li><a href="/patienthistory/">History <? echo($showUnread); ?></a></li> 
+                        <?
+                        }
+                        ?>
                         <li><a href="/changeDoctor/">Change doctor</a></li> 
 						<li><a href="/logout/">Logout</a></li>
 	                <?php

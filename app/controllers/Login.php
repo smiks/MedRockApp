@@ -26,9 +26,13 @@ class Login extends Controller{
 
 		/* if ok, login user */
 		$userid = $user->selectData("userID", "userNumber", $postedID);
+		$userName = $user->selectData("userName", "userNumber", $postedID);
+		$userSurname = $user->selectData("userSurname", "userNumber", $postedID);
 		$_SESSION['userID'] = $userid;
 		$_SESSION['userNumber'] = $postedID;
 		$_SESSION['loggedin'] = true;
+		$_SESSION['userName'] = $userName;
+		$_SESSION['userSurname'] = $userSurname;		
 		
 		Functions::redirect(Functions::internalLink("home/"));
 		return;
