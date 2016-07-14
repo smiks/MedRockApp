@@ -21,14 +21,14 @@
 		<input type='text' name='bloodPressureDia' placeholder='Blood pressure - Diastolic'><br>
 		<input type='text' name='breathingRate' placeholder='Breathing rate'><br>
 		<big><b>Coughing<b></big><br>
-		<input type='radio' name='cough' value='0'> &nbsp; Yes <br>
-		<input type='radio' name='cough' value='1'> &nbsp; No <br>
+		<input type='radio' name='cough' value='1'> &nbsp; Yes <br>
+		<input type='radio' name='cough' value='0'> &nbsp; No <br>
 		<big><b>Puking<b></big><br>
-		<input type='radio' name='puke' value='0'> &nbsp; Yes <br>
-		<input type='radio' name='puke' value='1'> &nbsp; No <br>	
+		<input type='radio' name='puke' value='1'> &nbsp; Yes <br>
+		<input type='radio' name='puke' value='0'> &nbsp; No <br>	
 		<big><b>Dizziness<b></big><br>
-		<input type='radio' name='dizziness' value='0'> &nbsp; Yes <br>
-		<input type='radio' name='dizziness' value='1'> &nbsp; No <br>				
+		<input type='radio' name='dizziness' value='1'> &nbsp; Yes <br>
+		<input type='radio' name='dizziness' value='0'> &nbsp; No <br>				
 
 		<br>
 		<input type='submit' name='submit' value='Submit Data'><br>

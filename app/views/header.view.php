@@ -82,7 +82,7 @@
 
                         <li><a href="#" style='border:0px; color:#b3b3b3;'>Logged in as: <? echo($_SESSION['userName']." ".$_SESSION['userSurname']); ?></a></li> 
 
-                        <? if($_GET['page'] == "patienthistory"){ ?>
+                        <? if($_GET['page'] == "patienthistory" || (isset($_POST['submit']) && $_GET['page'] == "postdata")){ ?>
                             <li><a href="/home/">Ask Doctor</a></li> 
                         <?
                         }

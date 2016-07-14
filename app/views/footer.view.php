@@ -16,19 +16,16 @@
 					</p>
 				</div>
 			</div>
-			<!--
+			
 			<div class="col-md-3">
 				<div class="widget">
-					<h5 class="widgetheading">Quick Links</h5>
+					<h5 class="widgetheading">Partners</h5>
 					<ul class="link-list">
-						<li><a href="#">Latest Events</a></li>
-						<li><a href="#">Terms and conditions</a></li>
-						<li><a href="#">Privacy policy</a></li>
-						<li><a href="#">Career</a></li>
-						<li><a href="#">Contact us</a></li>
+						<li><a href="http://fitness.avatar-rpg.net" target="_blank">Fitness Tracker</a></li>
 					</ul>
 				</div>
 			</div>
+			<!--
 			<div class="col-md-3">
 				<div class="widget">
 					<h5 class="widgetheading">Latest posts</h5>
