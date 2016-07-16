@@ -37,11 +37,13 @@
 
 </head>
 <body>
-	<div id="wrapper">
-	<!-- start header -->
-	<header>
-	<section class="contactInfo">
-	<div class="container"> 
+    <div id="wrapper">
+    <!-- start header -->
+    <header>
+<!--
+    <section class="contactInfo">
+
+    <div class="container"> 
                    
 
                     <div class="col-md-12"> 
@@ -51,8 +53,11 @@
                                 </ul>
                             </div> 
                     </div> 
+                   
             </div>
-		</section>	
+
+        </section>  
+-->         
         <div class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
@@ -61,14 +66,14 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-					<!-- OUR LOGO -->
+                    <!-- OUR LOGO -->
                     <a class="navbar-brand" href="/"><img src="/static/img/logo.png" alt="logo"/></a>
                 </div>
-				<!-- SHOW ONLY IF LOGGED IN -->
+                <!-- SHOW ONLY IF LOGGED IN -->
                 <div class="navbar-collapse collapse ">
                     <ul class="nav navbar-nav">
-        			<?php
-					if($_SESSION['loggedin']){
+                    <?php
+                    if($_SESSION['loggedin']){
 
                         require_once 'app/models/history.php';
                         $hist = new history();
@@ -77,53 +82,48 @@
                         if($nUnread > 0){
                             $showUnread = "<span class='numberCircle'>{$nUnread}</span>";
                         }
-						?>
-						<!-- EXAMPLE: <li class="active"><a href="index.html">Home</a></li>  -->
+                        ?>
+                        <!-- EXAMPLE: <li class="active"><a href="index.html">Home</a></li>  -->
 
                         <li><a href="#" style='border:0px; color:#b3b3b3;'>Logged in as: <? echo($_SESSION['userName']." ".$_SESSION['userSurname']); ?></a></li> 
-
-                        <? if($_GET['page'] == "patienthistory" || (isset($_POST['submit']) && $_GET['page'] == "postdata")){ ?>
-                            <li><a href="/home/">Ask Doctor</a></li> 
-                        <?
-                        }
-                        else {?>
+                        <li><a href="/home/">Ask Doctor</a></li> 
                         <li><a href="/patienthistory/">History <? echo($showUnread); ?></a></li> 
-                        <?
-                        }
-                        ?>
-                        <li><a href="/changeDoctor/">Change doctor</a></li> 
-						<li><a href="/logout/">Logout</a></li>
-	                <?php
-	            	} else { echo"<li>&nbsp;</li>";}
-	            	?>                        
+                        <li><a href="/logout/">Logout</a></li>
+                    <?php
+                    } else { echo"<li>&nbsp;</li>";}
+                    ?>                        
                     </ul>
                 </div>
 
             </div>
         </div>
-	</header>
-	<!-- end header -->
-		<section id="featured">
-	
-	<!-- SHOW ONLY IF NOT LOGGED IN -->
-	<!-- Slider -->
-		<?php
-			if(!$_SESSION['loggedin']){
-		?>
+    </header>
+    <!-- end header -->
+        <section id="featured">
+    
+    <!-- SHOW ONLY IF NOT LOGGED IN -->
+    <!-- Slider -->
+        <?php
+            if(!$_SESSION['loggedin']){
+        ?>
         <div id="main-slider" class="flexslider">
             <ul class="slides">
               <li>
-                <img src="/static/img/slides/1.jpg" alt="" height="400px" width="auto"/>
-                <div class="flex-caption">
+                <center>
+                <img src="/static/img/tutorial.gif" alt="" height="350px" style='width:auto;'/>
+                </center>
+                <!--
+                <div class="flex-caption" style='max-height:100px;'>
                     <h3>Tutorial</h3> 
-					<p>Quickly through application.</p>  
+                    <p>Quickly through application.</p>  
                 </div>
+                -->
               </li>
             </ul>
         </div>
-	    <?php
-		}
-		?>           
-	<!-- end slider -->
+        <?php
+        }
+        ?>           
+    <!-- end slider -->
  
-	</section> 
+    </section> 

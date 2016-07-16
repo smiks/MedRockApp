@@ -12,7 +12,8 @@
 					-->
 					<p>
 						<i class="icon-phone"></i> http://webthemez.com<br>
-						<i class="icon-envelope-alt"></i><a href="https://twitter.com/SoulSearchEng" data-placement="top" title="Twitter" target="_blank"> Twitter <i class="fa fa-twitter"></i></a>
+						<i class="icon-envelope-alt"></i><a href="https://twitter.com/SoulSearchEng" data-placement="top" title="Twitter" target="_blank"> Twitter <i class="fa fa-twitter"></i></a><br>
+						<a href="facebook.com/SoulSearchingEngineers/" data-placement="top" title="Facebook" target="_blank">Facebook <i class="fa fa-facebook"></i></a>
 					</p>
 				</div>
 			</div>
@@ -22,6 +23,7 @@
 					<h5 class="widgetheading">Partners</h5>
 					<ul class="link-list">
 						<li><a href="http://fitness.avatar-rpg.net" target="_blank">Fitness Tracker</a></li>
+						<li><a href="http://www.marand.com" target="_blank">Marand</a></li>
 					</ul>
 				</div>
 			</div>
